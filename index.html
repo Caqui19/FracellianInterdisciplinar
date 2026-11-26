@@ -118,16 +118,19 @@
             hidden></progress>
         </div>
         <div class="scanner-input-block">
-          <h3>Digitar ou colar os ingredientes</h3>
-          <p>Revise o texto reconhecido na foto ou insira o texto da embalagem.</p>
-          <label class="sr" for="ingredient-text">Ingredientes do rótulo</label>
-          <textarea id="ingredient-text" rows="7"
-            placeholder="Cole ou escreva a lista de ingredientes e as declarações do rótulo"></textarea>
-          <button id="analyze-ingredients" class="analyze-button" type="button">Conferir texto</button>
+          <h3>Análise do rótulo</h3>
+          <p>O resultado da conferência aparece aqui depois da leitura. Se quiser, abra o campo para revisar o texto identificado ou inserir os ingredientes manualmente.</p>
+          <details class="scanner-text-review">
+            <summary>Ver ou editar texto</summary>
+            <label class="sr" for="ingredient-text">Ingredientes do rótulo</label>
+            <textarea id="ingredient-text" rows="7"
+              placeholder="Cole ou escreva a lista de ingredientes e as declarações do rótulo"></textarea>
+            <button id="analyze-ingredients" class="analyze-button" type="button">Conferir texto</button>
+          </details>
+          <p id="ocr-status" class="ocr-status" role="status" aria-live="polite"></p>
+          <section id="scan-result" class="scan-result" aria-live="polite" aria-atomic="true" hidden></section>
         </div>
       </div>
-      <p id="ocr-status" class="ocr-status" role="status" aria-live="polite"></p>
-      <section id="scan-result" class="scan-result" aria-live="polite" aria-atomic="true" hidden></section>
     </section>
 
     <section class="section about feature-panel" id="about" role="tabpanel" aria-labelledby="about-title"

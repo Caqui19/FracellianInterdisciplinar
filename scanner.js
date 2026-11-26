@@ -190,7 +190,7 @@
     try {
       const worker = await getOcrWorker();
       const {data} = await worker.recognize(file);
-      textInput.value = data.text.trim();
+      textInput.value = data.text.replace(/\s+/g, " ").trim();
       progressBar.value = 1;
       progressBar.hidden = true;
       if (!textInput.value) {
