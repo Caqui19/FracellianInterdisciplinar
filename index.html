@@ -1,211 +1,237 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#FBF8F1">
-    <meta name="description" content="Informação e acolhimento para quem vive com a doença celíaca e para quem quer conviver melhor.">
-    <title>Fracellian — viver bem, juntos</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
-    <script src="data/ingredient-rules.js" defer></script>
-    
-    <script src="data/locations.js" defer></script>
-    
-    <script src="places.js" defer></script>
-    
-    <script src="scanner.js" defer></script>
-    
-    <script src="app.js" defer></script>
-  </head>
-  <body class="intro-active">
-    
-    <div id="intro-splash" role="status" aria-live="polite" aria-label="Símbolo do trigo sendo protegido">
-      <div class="intro-content">
-        <div class="intro-emblem" role="img" aria-label="Logo Fracellian">
-          <img class="intro-logo" src="assets/group-20.png" alt="">
-        </div>
-        <p class="intro-title" aria-label="Fracellian">Fracellian</p>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#FBF8F1">
+  <meta name="description"
+    content="Informação e acolhimento para quem vive com a doença celíaca e para quem quer conviver melhor.">
+  <title>Fracellian — viver bem, juntos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/group-20.png" type="image/png">
+
+  <script src="data/ingredient-rules.js" defer></script>
+
+  <script src="data/locations.js" defer></script>
+
+  <script src="places.js" defer></script>
+
+  <script src="scanner.js" defer></script>
+
+  <script src="app.js" defer></script>
+</head>
+
+<body class="intro-active">
+
+  <div id="intro-splash" role="status" aria-live="polite" aria-label="Símbolo do trigo sendo protegido">
+    <div class="intro-content">
+      <div class="intro-emblem" role="img" aria-label="Logo Fracellian">
+        <img class="intro-logo" src="assets/group-20.png" alt="">
       </div>
+      <p class="intro-title" aria-label="Fracellian">Fracellian</p>
     </div>
-    
-    <a class="skip" href="#main">Pular para o conteúdo</a>
-    
-    <header class="header">
-      <a class="brand" href="#"><img src="assets/group-20.png" alt="" class="brand-logo"> <span>Fracellian</span></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="#topics">Assuntos</a>
-        <a href="#about">Sobre</a>
-      </nav>
-      <button class="menu" aria-label="Abrir menu" aria-expanded="false">
-        <i>
-        </i>
-        <i>
-        </i>
-      </button>
-    </header>
-    
-    <main id="main">
-      
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <h1 id="hero-title">
-            <span>Viver sem glúten</span>
-            <span>fica mais leve.</span>
-            <em>Ainda mais juntos.</em>
-          </h1>
-          <p class="intro">Um lugar para entender a doença celíaca, encontrar respostas para o dia a dia e aprender a cuidar melhor de quem você ama.</p>
-        </div>
-        <div class="hero-art">
-          <img class="hero-logo" src="assets/group-20.png" alt="Logo Fracellian: trigo com símbolo de proibição">
-        </div>
-      </section>
-      
-      <nav class="feature-tabs" role="tablist" aria-label="Informações, lugares e scanner">
-        <button class="feature-tab active" id="tab-info" type="button" role="tab" aria-controls="topics" aria-selected="true" tabindex="0" data-feature-tab="info">Informações</button>
-        <button class="feature-tab" id="tab-places" type="button" role="tab" aria-controls="panel-places" aria-selected="false" tabindex="-1" data-feature-tab="places">Lugares</button>
-        <button class="feature-tab" id="tab-scanner" type="button" role="tab" aria-controls="panel-scanner" aria-selected="false" tabindex="-1" data-feature-tab="scanner">Scanner</button>
-      </nav>
-      
-      <section class="section topics feature-panel" id="topics" role="tabpanel" aria-labelledby="tab-info" data-feature-panel="info">
-        <svg class="cord-layer" aria-hidden="true" focusable="false"></svg>
-        <div class="topics-head">
-          <div>
-            <h2>Informações para o dia a dia</h2>
-            <p class="muted">Explore os assuntos e abra um cartão para ver orientações práticas.</p>
-          </div>
-        </div>
-        <div class="grid" id="grid">
-        </div>
-      </section>
-      
-      <section class="section places-panel feature-panel" id="panel-places" role="tabpanel" aria-labelledby="tab-places" data-feature-panel="places" hidden>
-        <div class="panel-heading">
-          <h2>Lugares sem glúten</h2>
-          <p class="muted">Consulte os locais cadastrados e confirme as práticas diretamente com cada estabelecimento.</p>
-        </div>
-        <div id="places-list" class="places-list" aria-live="polite"></div>
-      </section>
-      
-      <section class="section scanner-panel feature-panel" id="panel-scanner" role="tabpanel" aria-labelledby="tab-scanner" data-feature-panel="scanner" hidden>
-        <div class="panel-heading">
-          <h2>Conferir ingredientes</h2>
-          <p class="muted">Fotografe o rótulo ou digite a lista para revisar termos que merecem atenção.</p>
-        </div>
-        <div class="scanner-layout">
-          <div class="scanner-input-block">
-            <h3>Fotografar o rótulo</h3>
-            <p>Enquadre a lista de ingredientes e a declaração sobre glúten com boa iluminação.</p>
-            <label class="scanner-file-label" for="label-photo">Escolher foto ou abrir câmera</label>
-            <input id="label-photo" class="scanner-file" type="file" accept="image/*" capture="environment">
-            <img id="label-preview" class="label-preview" alt="Prévia da foto do rótulo" hidden>
-            <progress id="ocr-progress" class="ocr-progress" max="1" value="0" aria-label="Progresso da leitura do rótulo" hidden></progress>
-          </div>
-          <div class="scanner-input-block">
-            <h3>Digitar ou colar os ingredientes</h3>
-            <p>Revise o texto reconhecido na foto ou insira o texto da embalagem.</p>
-            <label class="sr" for="ingredient-text">Ingredientes do rótulo</label>
-            <textarea id="ingredient-text" rows="7" placeholder="Cole ou escreva a lista de ingredientes e as declarações do rótulo"></textarea>
-            <button id="analyze-ingredients" class="analyze-button" type="button">Conferir texto</button>
-          </div>
-        </div>
-        <section id="scan-result" class="scan-result" aria-live="polite" aria-atomic="true" hidden></section>
-      </section>
-      
-      <section class="section about feature-panel" id="about" role="tabpanel" aria-labelledby="about-title" data-feature-panel="info">
-        <div class="about-intro">
-          <div class="about-art">
-            <img class="about-logo" src="assets/group-20.png" alt="">
-          </div>
-          <div class="about-copy">
-            <p class="about-eyebrow">SOBRE O PROJETO</p>
-            <h2 id="about-title">Informação para escolhas mais seguras</h2>
-            <p class="muted about-text">O Fracellian é um projeto de conscientização sobre a doença celíaca, criado para aproximar informações sobre a condição do cotidiano de pessoas celíacas, de suas famílias e de quem convive com elas. O conteúdo aborda cuidados com a alimentação sem glúten, leitura de rótulos, prevenção da contaminação cruzada e situações comuns, como as refeições fora de casa.</p>
-            <p class="muted about-text">Além das orientações educativas, a plataforma reúne recursos para pesquisar locais para comer e revisar a lista de ingredientes de produtos. A proposta é facilitar o acesso à informação e apoiar decisões mais conscientes, sem garantir que um alimento ou estabelecimento seja seguro sem a devida confirmação.</p>
-          </div>
-        </div>
+  </div>
 
-        <div class="about-features" aria-label="Funcionalidades do Fracellian">
-          <article class="about-feature">
-            <h3>Informações para o dia a dia</h3>
-            <p>Cartões interativos organizam orientações sobre doença celíaca, alimentação, rótulos e cuidados em diferentes situações.</p>
-          </article>
-          <article class="about-feature">
-            <h3>Pesquisa de lugares</h3>
-            <p>Consulte o diretório de locais cadastrados e confirme diretamente com cada estabelecimento os ingredientes e os cuidados de preparo.</p>
-          </article>
-          <article class="about-feature">
-            <h3>Conferência de rótulos</h3>
-            <p>Fotografe ou insira a lista de ingredientes para destacar termos que merecem atenção. A ferramenta serve como apoio à revisão, não como confirmação de segurança.</p>
-          </article>
-        </div>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
 
-        <div class="about-team">
-          <div class="about-team-heading">
-            <p class="about-eyebrow">NOSSA EQUIPE</p>
-            <h3>Quem está por trás do Fracellian</h3>
-            <p class="muted">A equipe trabalhou na pesquisa, no planejamento e na construção do projeto.</p>
-          </div>
-          <div class="team-grid">
-            <article class="team-card">
-              <img src="assets/alvaro.jpg" alt="Alvaro Takeshi">
-              <h4>Alvaro Takeshi</h4>
-              <p>Idealizador e desenvolvedor do projeto Fracellian.</p>
-            </article>
-            <article class="team-card">
-              <img src="assets/andre.jpg" alt="André Luís">
-              <h4>André Luís</h4>
-              <p>Atuou principalmente na análise dos dados da pesquisa de campo e também na documentação do projeto.</p>
-            </article>
-            <article class="team-card">
-              <img src="assets/denis.jpg" alt="Denis de Lucas">
-              <h4>Denis de Lucas</h4>
-              <p>Atuou principalmente na análise dos dados da pesquisa de campo e também na documentação do projeto.</p>
-            </article>
-            <article class="team-card">
-              <img src="assets/isaac.jpg" alt="Isaac Oliveira">
-              <h4>Isaac Oliveira</h4>
-              <p>Auxiliou no desenvolvimento e na documentação do projeto.</p>
-            </article>
-            <article class="team-card">
-              <img src="assets/joao.jpg" alt="João Vitor">
-              <h4>João Vitor</h4>
-              <p>Atuou principalmente na análise dos dados da pesquisa de campo e também na documentação do projeto.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-    
-    <footer class="footer">
-      <a class="brand" href="#">Fracellian</a>
-      <p>Informações sobre doença celíaca e vida sem glúten.</p>
-      <div class="foot-links">
-        <a href="#topics">Assuntos</a>
-        <a href="#about">Sobre o projeto</a>
+  <header class="header">
+    <a class="brand" href="#"><img src="assets/group-20.png" alt="" class="brand-logo"> <span>Fracellian</span></a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#topics">Assuntos</a>
+      <a href="#about">Sobre</a>
+    </nav>
+    <button class="menu" aria-label="Abrir menu" aria-expanded="false">
+      <i>
+      </i>
+      <i>
+      </i>
+    </button>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">
+          <span>Viver sem glúten</span>
+          <span>fica mais leve.</span>
+          <em>Ainda mais juntos.</em>
+        </h1>
+        <p class="intro">Um lugar para entender a doença celíaca, encontrar respostas para o dia a dia e aprender a
+          cuidar melhor de quem você ama.</p>
       </div>
-      <p class="disclaimer">Conteúdo educativo. Para decisões sobre diagnóstico e tratamento, converse com profissionais de saúde.</p>
-      <small>© 2026 Fracellian</small>
-    </footer>
-    
-    <dialog id="detail">
-      <button class="close" aria-label="Fechar">×</button>
-      <p class="eyebrow" id="dialog-tag">
+      <div class="hero-art">
+        <img class="hero-logo" src="assets/group-20.png" alt="Logo Fracellian: trigo com símbolo de proibição">
+      </div>
+    </section>
+
+    <nav class="feature-tabs" role="tablist" aria-label="Informações, lugares e scanner">
+      <button class="feature-tab active" id="tab-info" type="button" role="tab" aria-controls="topics"
+        aria-selected="true" tabindex="0" data-feature-tab="info">Informações</button>
+      <button class="feature-tab" id="tab-places" type="button" role="tab" aria-controls="panel-places"
+        aria-selected="false" tabindex="-1" data-feature-tab="places">Lugares</button>
+      <button class="feature-tab" id="tab-scanner" type="button" role="tab" aria-controls="panel-scanner"
+        aria-selected="false" tabindex="-1" data-feature-tab="scanner">Scanner</button>
+    </nav>
+
+    <section class="section topics feature-panel" id="topics" role="tabpanel" aria-labelledby="tab-info"
+      data-feature-panel="info">
+      <svg class="cord-layer" aria-hidden="true" focusable="false"></svg>
+      <div class="topics-head">
+        <div>
+          <h2>Informações para o dia a dia</h2>
+          <p class="muted">Explore os assuntos e abra um cartão para ver orientações práticas.</p>
+        </div>
+      </div>
+      <div class="grid" id="grid">
+      </div>
+    </section>
+
+    <section class="section places-panel feature-panel" id="panel-places" role="tabpanel" aria-labelledby="tab-places"
+      data-feature-panel="places" hidden>
+      <div class="panel-heading">
+        <h2>Lugares sem glúten</h2>
+        <p class="muted">Consulte os locais cadastrados e confirme as práticas diretamente com cada estabelecimento.</p>
+      </div>
+      <div id="places-list" class="places-list" aria-live="polite"></div>
+    </section>
+
+    <section class="section scanner-panel feature-panel" id="panel-scanner" role="tabpanel"
+      aria-labelledby="tab-scanner" data-feature-panel="scanner" hidden>
+      <div class="panel-heading">
+        <h2>Conferir ingredientes</h2>
+        <p class="muted">Fotografe o rótulo ou digite a lista para revisar termos que merecem atenção.</p>
+      </div>
+      <div class="scanner-layout">
+        <div class="scanner-input-block">
+          <h3>Fotografar o rótulo</h3>
+          <p>Enquadre a lista de ingredientes e a declaração sobre glúten com boa iluminação.</p>
+          <label class="scanner-file-label" for="label-photo">Escolher foto ou abrir câmera</label>
+          <input id="label-photo" class="scanner-file" type="file" accept="image/*" capture="environment">
+          <img id="label-preview" class="label-preview" alt="Prévia da foto do rótulo" hidden>
+          <progress id="ocr-progress" class="ocr-progress" max="1" value="0" aria-label="Progresso da leitura do rótulo"
+            hidden></progress>
+        </div>
+        <div class="scanner-input-block">
+          <h3>Digitar ou colar os ingredientes</h3>
+          <p>Revise o texto reconhecido na foto ou insira o texto da embalagem.</p>
+          <label class="sr" for="ingredient-text">Ingredientes do rótulo</label>
+          <textarea id="ingredient-text" rows="7"
+            placeholder="Cole ou escreva a lista de ingredientes e as declarações do rótulo"></textarea>
+          <button id="analyze-ingredients" class="analyze-button" type="button">Conferir texto</button>
+        </div>
+      </div>
+      <section id="scan-result" class="scan-result" aria-live="polite" aria-atomic="true" hidden></section>
+    </section>
+
+    <section class="section about feature-panel" id="about" role="tabpanel" aria-labelledby="about-title"
+      data-feature-panel="info">
+      <div class="about-intro">
+        <div class="about-art">
+          <img class="about-logo" src="assets/group-20.png" alt="">
+        </div>
+        <div class="about-copy">
+          <p class="about-eyebrow">SOBRE O PROJETO</p>
+          <h2 id="about-title">Informação para escolhas mais seguras</h2>
+          <p class="muted about-text">O Fracellian é um projeto de conscientização sobre a doença celíaca, criado para
+            aproximar informações sobre a condição do cotidiano de pessoas celíacas, de suas famílias e de quem convive
+            com elas. O conteúdo aborda cuidados com a alimentação sem glúten, leitura de rótulos, prevenção da
+            contaminação cruzada e situações comuns, como as refeições fora de casa.</p>
+          <p class="muted about-text">Além das orientações educativas, a plataforma reúne recursos para pesquisar locais
+            para comer e revisar a lista de ingredientes de produtos. A proposta é facilitar o acesso à informação e
+            apoiar decisões mais conscientes, sem garantir que um alimento ou estabelecimento seja seguro sem a devida
+            confirmação.</p>
+        </div>
+      </div>
+
+      <div class="about-features" aria-label="Funcionalidades do Fracellian">
+        <article class="about-feature">
+          <h3>Informações para o dia a dia</h3>
+          <p>Cartões interativos organizam orientações sobre doença celíaca, alimentação, rótulos e cuidados em
+            diferentes situações.</p>
+        </article>
+        <article class="about-feature">
+          <h3>Pesquisa de lugares</h3>
+          <p>Consulte o diretório de locais cadastrados e confirme diretamente com cada estabelecimento os ingredientes
+            e os cuidados de preparo.</p>
+        </article>
+        <article class="about-feature">
+          <h3>Conferência de rótulos</h3>
+          <p>Fotografe ou insira a lista de ingredientes para destacar termos que merecem atenção. A ferramenta serve
+            como apoio à revisão, não como confirmação de segurança.</p>
+        </article>
+      </div>
+
+      <div class="about-team">
+        <div class="about-team-heading">
+          <p class="about-eyebrow">NOSSA EQUIPE</p>
+          <h3>Quem está por trás do Fracellian</h3>
+          <p class="muted">A equipe trabalhou na pesquisa, no planejamento e na construção do projeto.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <img src="assets/alvaro.jpg" alt="Alvaro Takeshi">
+            <h4>Alvaro Takeshi</h4>
+            <p>Idealizador e desenvolvedor do projeto Fracellian.</p>
+          </article>
+          <article class="team-card">
+            <img src="assets/andre.jpg" alt="André Luís">
+            <h4>André Luís</h4>
+            <p>Atuou principalmente na análise dos dados da pesquisa de campo e também na documentação do projeto.</p>
+          </article>
+          <article class="team-card">
+            <img src="assets/denis.jpg" alt="Denis de Lucas">
+            <h4>Denis de Lucas</h4>
+            <p>Atuou principalmente na análise dos dados da pesquisa de campo e também na documentação do projeto.</p>
+          </article>
+          <article class="team-card">
+            <img src="assets/isaac.jpg" alt="Isaac Oliveira">
+            <h4>Isaac Oliveira</h4>
+            <p>Auxiliou no desenvolvimento e na documentação do projeto.</p>
+          </article>
+          <article class="team-card">
+            <img src="assets/joao.jpg" alt="João Vitor">
+            <h4>João Vitor</h4>
+            <p>Atuou principalmente na análise dos dados da pesquisa de campo e também na documentação do projeto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#">Fracellian</a>
+    <p>Informações sobre doença celíaca e vida sem glúten.</p>
+    <div class="foot-links">
+      <a href="#topics">Assuntos</a>
+      <a href="#about">Sobre o projeto</a>
+    </div>
+    <p class="disclaimer">Conteúdo educativo. Para decisões sobre diagnóstico e tratamento, converse com profissionais
+      de saúde.</p>
+    <small>© 2026 Fracellian</small>
+  </footer>
+
+  <dialog id="detail">
+    <button class="close" aria-label="Fechar">×</button>
+    <p class="eyebrow" id="dialog-tag">
+    </p>
+    <h2 id="dialog-title">
+    </h2>
+    <div class="detail-box">
+      <h3 id="dialog-prompt">
+      </h3>
+      <p id="dialog-body">
       </p>
-      <h2 id="dialog-title">
-      </h2>
-      <div class="detail-box">
-        <h3 id="dialog-prompt">
-        </h3>
-        <p id="dialog-body">
-        </p>
-      </div>
-      <div id="dialog-sections"></div>
-      <small class="reminder">Cada experiência é única. Quando tiver dúvidas sobre sua saúde, procure um profissional de confiança.</small>
-    </dialog>
-  </body>
+    </div>
+    <div id="dialog-sections"></div>
+    <small class="reminder">Cada experiência é única. Quando tiver dúvidas sobre sua saúde, procure um profissional de
+      confiança.</small>
+  </dialog>
+</body>
+
 </html>
